@@ -9,11 +9,10 @@ const generateMarkdown = (answers) => {
 }
 
 ## Table Of Contents
+
 *Description
 *Installation
 *Usage
-*
-*
 
 // TODO: Create an array of questions for user input
 const questions = inquirer
@@ -62,9 +61,13 @@ const questions = inquirer
 
 ])
 
+.then((answers) => {
+  const htmlPageContent = generateHTML(answers);
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFileAsync = utils.promisfy (fs.writeFile);
+function writeToFile(addfilenamewhencomplete, generateMarkdown) {
+  catch(console.error();)
+
 
   const promptUser = () => {
     return inquirer.prompt ([
