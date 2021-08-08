@@ -1,8 +1,19 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
-const fs = require('fs');
+const fs = require("fs");
 const utils = require ("utils");
 
+const generateMarkdown = (answers) => {
+  `# ${answers.title}`  `# ${answers.description}` `# ${answers.TableOfContents}` `# ${answers.Installation}`
+  `# ${answers.usage}` `# ${answers.License}` `# ${answers.contributing}` `# ${answers.tests}`
+}
+
+## Table Of Contents
+*Description
+*Installation
+*Usage
+*
+*
 
 // TODO: Create an array of questions for user input
 const questions = inquirer
@@ -47,11 +58,7 @@ const questions = inquirer
     name: "Tests",
     message: "Do you have any project tests? If so please provide",
   },
-  {
-    type: "input",
-    name: "Questions",
-    message: "Are there any installations are necessary to complete Project?",
-  },
+ 
 
 ])
 
@@ -78,10 +85,10 @@ function writeToFile(fileName, data) {
 // }
 
 // TODO: Create a function to initialize app
-function init(generateReadme) {
-  this.generateReadme=generateReadme;
+function init(generateMarkdown) {
+  this.generateMarkdown=generateMarkdown;
 }
-generateReadme.prototype.print=function (){
+generateMarkdown.prototype.print=function (){
   console.log(this.generateReadme)
 }
 
