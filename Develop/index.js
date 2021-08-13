@@ -3,16 +3,13 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const utils = require ("utils");
 
-const generateMarkdown = (answers) => {
-  `# ${answers.title}`  `# ${answers.description}` `# ${answers.TableOfContents}` `# ${answers.Installation}`
-  `# ${answers.usage}` `# ${answers.License}` `# ${answers.contributing}` `# ${answers.tests}`
+// writeFile function
+const writeFileAsync = util.promisify(fs.writeFile);
+
+const promptUser = () => {
+  return inquirer.prompt([
+  ])
 }
-
-## Table Of Contents
-
-*Description
-*Installation
-*Usage
 
 // TODO: Create an array of questions for user input
 const questions = inquirer
@@ -57,42 +54,16 @@ const questions = inquirer
     name: "Tests",
     message: "Do you have any project tests? If so please provide",
   },
- 
 
 ])
 
-.then((answers) => {
-  const htmlPageContent = generateHTML(answers);
-
-// TODO: Create a function to write README file
-function writeToFile(addfilenamewhencomplete, generateMarkdown) {
-  catch(console.error();)
-
-
-  const promptUser = () => {
-    return inquirer.prompt ([
-      )
-  }
-  
-}
-
-
-
-
-// // function writeToFile(fileName, data) {
-//     fs.writeFile("fileName","data"), function (err){
-//         if (err) throw err;
-//         console.log (data)
-//     }
-    
-// }
 
 // TODO: Create a function to initialize app
-function init(generateMarkdown) {
-  this.generateMarkdown=generateMarkdown;
-}
-generateMarkdown.prototype.print=function (){
-  console.log(this.generateReadme)
+function init() {
+    inquirer.prompt(questions)
+    .then ((answers) => writeFileAsync("GeneratedREADME.md",generateREADME(answers))).then(()=>console.log("yes"))
+    .catch ((err) => console.log(err));
+
 }
 
 // Function call to initialize app
