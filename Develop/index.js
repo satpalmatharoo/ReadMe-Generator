@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+//Packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require ("util");
@@ -6,24 +6,23 @@ const util = require ("util");
 // writeFile function
 const writeFileAsync = util.promisify(fs.writeFile);
 
+const testing = () => {
 
-inquirer
-    .prompt([
+return inquirer.prompt([
     {
-  // TODO: Create an array of questions for user input
     type: "input",
-    name: "Title",
-    message: "What is the title of the project?"
+    message: "What is the title of the project?",
+    name: "title",
   },
   {
     type: "input",
-    name: "Description",
-    message:  "Give a detailed overview and description of the project"
+    message: "Give a detailed overview and description of the project",
+    name:  "Description",
   },
   {
     type: "input",
+    message: "Contents",
     name: "Table of Contents",
-    message: "Guidence about funtionality",
   },
   {
     type: "input",
@@ -36,9 +35,10 @@ inquirer
     message: "Please explain usage",
   },
   {
-    type: "input",
+    type: "list",
     name: "License",
     message: "Add your license or badge link if needed",
+    choices: ["GNU GPLv3", "Mozilla Public License 2.0", "Apache License 2.0", "The Unlicense", "N/A"]
   },
   {
     type: "input",
@@ -52,22 +52,36 @@ inquirer
   },
 
 ])
-// const generateMarkdown = (answers) => is there where to put answers?
+}
 
+const generateMarkdown = (answers) =>
+  `#Table of contents
+  *Title
+  *Description
+  *Installation
+  *Usage
+  *License
+  *Contributing
+  *Tests
+   
+   # ${answers.title}
+   
+   #Description
+    ${answers.Description}
+   # ${answers.TableofContents}
+   # ${answers.Installation}
+   # ${answers.Usage}
+   # ${answers.License}
+   # ${answers.Contributing}
+   # ${answers.Tests}
+  `;
 
-// TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions)
-    .then ((answers) => writeFileAsync("GeneratedMarkdown.md",generateMarkdown(answers)))
-    .then(()=>console.log("generated"))
-    .catch ((err) => console.log(err));
-
+const init = () => {
+  testing()
+    .then((data) => writeFileAsync('index.md', generateMarkdown(data)))
+    .then(() => console.log('Successfully wrote to index.md'))
+    .catch((err) => console.error(err));
 };
 
-// Function call to initialize app
 init();
 
-
-// var fs = require('fs');
-
-//create a file named mynewfile3.txt:
