@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require ("util");
 
+
 // writeFile function
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -42,6 +43,16 @@ return inquirer.prompt([
   },
   {
     type: "input",
+    name: "Github",
+    message: "Add your Github user name",
+  },
+  {
+    type: "list",
+    name: "Email",
+    message: "Please add your email address",
+  },
+  {
+    type: "input",
     name: "Contributing",
     message: "Would you like to add contributors to your project?",
   },
@@ -55,23 +66,27 @@ return inquirer.prompt([
 }
 
 const generateMarkdown = (answers) =>
-  `#Table of contents
-  *Title
-  *Description
-  *Installation
-  *Usage
-  *License
-  *Contributing
-  *Tests
+`# Table of contents
+* Title
+* Description
+* Installation
+* Usage
+* License
+* What is your Github Username
+* What is your Email address
+* Contributing
+* Tests
    
    # ${answers.title}
    
    #Description
-    ${answers.Description}
+   # ${answers.Description}
    # ${answers.TableofContents}
    # ${answers.Installation}
    # ${answers.Usage}
    # ${answers.License}
+   # ${answers.Github}
+   # ${answers.Email}
    # ${answers.Contributing}
    # ${answers.Tests}
   `;
