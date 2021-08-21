@@ -22,15 +22,11 @@ return inquirer.prompt([
   },
   {
     type: "input",
-    message: "Contents",
-    name: "Table of Contents",
-  },
-  {
-    type: "input",
     name: "Installation",
     message: "Provide any installation instructions",
   },
   {
+  
     type: "input",
     name: "Usage",
     message: "Please explain usage",
@@ -47,7 +43,7 @@ return inquirer.prompt([
     message: "Add your Github user name",
   },
   {
-    type: "list",
+    type: "input",
     name: "Email",
     message: "Please add your email address",
   },
@@ -66,9 +62,9 @@ return inquirer.prompt([
 }
 
 const generateMarkdown = (answers) =>
-`# Table of contents
-* Title
-* Description
+`## Table of contents
+* Title 
+* Description 
 * Installation
 * Usage
 * License
@@ -77,18 +73,16 @@ const generateMarkdown = (answers) =>
 * Contributing
 * Tests
    
-   # ${answers.title}
-   
-   #Description
-   # ${answers.Description}
-   # ${answers.TableofContents}
-   # ${answers.Installation}
-   # ${answers.Usage}
-   # ${answers.License}
-   # ${answers.Github}
-   # ${answers.Email}
-   # ${answers.Contributing}
-   # ${answers.Tests}
+ #${answers.title}
+  
+   #${answers.Description}
+   #${answers.Installation}
+   #${answers.Usage}
+   #${answers.License}
+   #${answers.Github}
+   #${answers.Email}
+   #${answers.Contributing}
+   #${answers.Tests}
   `;
 
 const init = () => {
