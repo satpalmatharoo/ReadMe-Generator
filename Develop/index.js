@@ -4,9 +4,8 @@ const fs = require("fs");
 const util = require ("util");
 
 
-
 // writeFile function
-const writeFileAsync = util.promisify(fs.writeFile);
+// const writeFileAsync = util.promisify(fs.writeFile);
 
 const testing = () => {
 
@@ -74,31 +73,31 @@ const generateMarkdown = (answers) =>
 * Contributing
 * Tests
    
-   
-  ##Title
-  ${answers.title}
-  
-  *Description
-  ${answers.Description}
+## ${answers.title}
 
-   #${answers.Installation}
+${answers.Description}
 
-   #${answers.Usage}
+## Installation
+${answers.Installation}
 
-   #${answers.License}
+## Usage
+${answers.Usage}
+
+## License
+${answers.License}
    
-   #${answers.Github}
+## Contributors
+${answers.Github} (${answers.Email})
+
+${answers.Contributing}
    
-   #${answers.Email}
-   
-   #${answers.Contributing}
-   
-   #${answers.Tests}
+## Testing
+${answers.Tests}
   `;
 
 const init = () => {
   testing()
-    .then((data) => writeFileAsync('index.md', generateMarkdown(data)))
+    .then((data) => fs.writeFileSync('index.md', generateMarkdown(data)))
     .then(() => console.log('Successfully wrote to index.md'))
     .catch((err) => console.error(err));
 };
