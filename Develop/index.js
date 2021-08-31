@@ -4,6 +4,7 @@ const fs = require("fs");
 const util = require ("util");
 
 
+
 // writeFile function
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -35,7 +36,7 @@ return inquirer.prompt([
     type: "list",
     name: "License",
     message: "Add your license or badge link if needed",
-    choices: ["GNU GPLv3", "Mozilla Public License 2.0", "Apache License 2.0", "The Unlicense", "N/A"]
+    choices: ["GNU GPLv3", "Apache License 2.0", "MIT", "N/A"]
   },
   {
     type: "input",
@@ -73,15 +74,25 @@ const generateMarkdown = (answers) =>
 * Contributing
 * Tests
    
- #${answers.title}
+   
+  ##Title
+  ${answers.title}
   
-   #${answers.Description}
+  *Description
+  ${answers.Description}
+
    #${answers.Installation}
+
    #${answers.Usage}
+
    #${answers.License}
+   
    #${answers.Github}
+   
    #${answers.Email}
+   
    #${answers.Contributing}
+   
    #${answers.Tests}
   `;
 
