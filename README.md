@@ -6,7 +6,7 @@ Creating an application which uses the command-line to generate a ReadMe using t
 [Inquirer package](https://www.npmjs.com/package/inquirer).
 
 ### Screenshot of Readme
-![Screenshot] C:\Users\hp\documents\bootcamp\ReadMe-Generator\ReadmeScreenshot.png
+![Screenshot] pngC:\Users\hp\documents\bootcamp\ReadMe-Generator\screenshot.png
 
 #### Screencastify Link
 https://drive.google.com/file/d/1TAWB-_ezxURLw5JqF2SmlGKWcuVDC2LA/view
