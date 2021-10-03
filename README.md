@@ -2,11 +2,30 @@
 Creating an application which uses the command-line to generate a ReadMe using the Inquirer package
 
 
-## NPM Package 
-[Inquirer package](https://www.npmjs.com/package/inquirer).
+## Table of contents
+* Title 
+* Description 
+* Installation
+* Usage
+* License
+* What is your Github Username
+* What is your Email address
+* Contributing
+* Tests
 
-### Screenshot of Readme
-![Screenshot] pngC:\Users\hp\documents\bootcamp\ReadMe-Generator\screenshot.png
+## Installation
+npm i  [Inquirer package](https://www.npmjs.com/package/inquirer).
 
-#### Screencastify Link
+
+## Usage
+Run npi i at the Command Line
+
+## License
+GNU GPLv3
+
+
+## Screenshot of Readme
+![Screenshot] "ReadMe-Generator\screenshot.png"
+
+## Screencastify Link
 https://drive.google.com/file/d/1TAWB-_ezxURLw5JqF2SmlGKWcuVDC2LA/view
