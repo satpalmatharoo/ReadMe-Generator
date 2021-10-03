@@ -25,7 +25,14 @@ GNU GPLv3
 
 
 ## Screenshot of Readme
+<<<<<<< HEAD
 ![Screenshot] .\ReadMe-Generator\team1.png"
+=======
+![Screenshot] "ReadMe-Generator\screenshot.png"
+<img width="960" alt="2021-09-06" src="https://user-images.githubusercontent.com/84681197/135768956-9940ad68-d466-42d9-8a88-4de4b1090131.png">
+
+
+>>>>>>> e1b3173238b9f062c3b5b32fc53da6420d9f8abe
 
 ## Screencastify Link
 https://drive.google.com/file/d/1TAWB-_ezxURLw5JqF2SmlGKWcuVDC2LA/view
