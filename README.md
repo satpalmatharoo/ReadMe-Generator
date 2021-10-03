@@ -25,7 +25,7 @@ GNU GPLv3
 
 
 ## Screenshot of Readme
-![Screenshot] "ReadMe-Generator\screenshot.png"
+![Screenshot] .\ReadMe-Generator\team1.png"
 
 ## Screencastify Link
 https://drive.google.com/file/d/1TAWB-_ezxURLw5JqF2SmlGKWcuVDC2LA/view
